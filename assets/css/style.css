@@ -26,20 +26,25 @@ body {
 
 
 #container {
-  background: url(../img/fundo.jpg) center/cover no-repeat;
+  width: 360px;
+  background: 
+  linear-gradient(
+      145deg,
+      rgba(99, 102, 241, 0.25),
+      rgba(139, 92, 246, 0.15)
+    ),
+  url(../img/fundo.jpg) center/cover no-repeat;
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(12px);
   border-radius: 16px;
   padding: 30px 20px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
   text-align: center;
-  width: 360px;
   position: relative;
   overflow: hidden;
   animation: fadeIn 0.8s ease;
 }
 
-/* camada escura suave sobre a imagem */
 #container::before {
   content: "";
   position: absolute;
@@ -264,4 +269,5 @@ footer {
     padding: 25px 15px;
   }
 }
+
 
