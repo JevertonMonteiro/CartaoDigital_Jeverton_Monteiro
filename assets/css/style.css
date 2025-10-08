@@ -6,7 +6,7 @@
 }
 
 :root {
-  --primaria: #00ff66; /* verde neon */
+  --primaria: #00ff66; 
   --secundaria: #00cc44;
   --escuro: #000000;
   --vidro: rgba(255, 255, 255, 0.06);
@@ -18,14 +18,14 @@ body {
   color: var(--texto);
   display: flex;
   justify-content: center;
-  align-items: center; /* centraliza verticalmente */
+  align-items: center; 
   min-height: 100vh;
-  margin: 0; /* garante que não haja espaço extra */
-  overflow: hidden; /* remove barras de rolagem */
-  padding: 0; /* remove padding que causa overflow */
+  overflow: hidden; 
+  margin: 0px; 
+  padding: 20px; 
 }
 
-/* CONTAINER PRINCIPAL */
+
 #container {
   width: 350px;
   min-height: 95vh;
@@ -33,7 +33,7 @@ body {
   border: 1px solid rgba(0, 255, 100, 0.2);
   backdrop-filter: blur(10px);
   border-radius: 18px;
-  padding: 8px;
+  padding: 14px;
   box-shadow: 0 0 25px rgba(0, 255, 100, 0.2);
   text-align: center;
   position: relative;
@@ -41,7 +41,7 @@ body {
   animation: fadeIn 0.8s ease;
 }
 
-/* camada de brilho sutil */
+
 #container::before {
   content: "";
   position: absolute;
@@ -59,7 +59,7 @@ body {
   z-index: 1;
 }
 
-/* PERFIL */
+
 #profile img {
   width: 100px;
   height: 100px;
@@ -81,7 +81,7 @@ body {
   font-size: 1rem;
 }
 
-/* HABILIDADES */
+
 .abilidades {
   margin: 25px 0;
 }
@@ -96,7 +96,7 @@ body {
   filter: drop-shadow(0 0 8px var(--primaria));
 }
 
-/* MENU */
+
 nav .menu {
   list-style: none;
   display: flex;
@@ -114,7 +114,7 @@ nav .menu a {
   font-weight: 600;
   color: #fff;
   background: var(--vidro);
-  padding: 14px;
+  padding: 8px;
   border-radius: 10px;
   border: 1px solid rgba(0, 255, 100, 0.2);
   transition: all 0.3s ease;
@@ -135,7 +135,7 @@ nav .menu a:active,
   box-shadow: 0 0 6px var(--secundaria);
 }
 
-/* LINKS SOCIAIS */
+
 #social-links {
   display: flex;
   justify-content: center;
@@ -155,7 +155,7 @@ nav .menu a:active,
   text-shadow: 0 0 10px var(--primaria);
 }
 
-/* RODAPÉ */
+
 footer {
   font-size: 0.8rem;
   opacity: 0.8;
@@ -163,7 +163,7 @@ footer {
   line-height: 1.4;
 }
 
-/* MODAL */
+
 .modal {
   display: none;
   position: fixed;
@@ -231,7 +231,7 @@ footer {
   color: #fff;
 }
 
-/* ANIMAÇÃO */
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -243,10 +243,10 @@ footer {
   }
 }
 
-/* RESPONSIVO */
+
 @media (max-width: 400px) {
   #container {
-    padding: 18px;
     width: 100%;
+    padding: 30px;
   }
 }
