@@ -6,15 +6,15 @@
 }
 
 :root {
-  --primaria: #6366f1;
-  --secundaria: #8b5cf6;
-  --escuro: #0f172a;
-  --vidro: rgba(255, 255, 255, 0.08);
+  --primaria: #00ff66; /* verde neon */
+  --secundaria: #00cc44;
+  --escuro: #000000;
+  --vidro: rgba(255, 255, 255, 0.06);
   --texto: #e2e8f0;
 }
 
 body {
-  background: linear-gradient(135deg, var(--escuro), #1e1b4b);
+  background: url(../img/fundo.png) center/cover no-repeat;
   color: var(--texto);
   display: flex;
   justify-content: center;
@@ -23,35 +23,30 @@ body {
   padding: 20px;
 }
 
+/* CONTAINER PRINCIPAL */
 #container {
-  width: 360px;
-  background: 
-    linear-gradient(
-      145deg,
-      rgba(99, 102, 241, 0.25),
-      rgba(139, 92, 246, 0.15)
-    ),
-    url(../img/fundo.jpg) center/cover no-repeat;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(12px);
-  border-radius: 16px;
+  width: 380px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(0, 255, 100, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 18px;
   padding: 30px 20px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 25px rgba(0, 255, 100, 0.2);
   text-align: center;
   position: relative;
   overflow: hidden;
   animation: fadeIn 0.8s ease;
 }
 
-/* Camada escura suave sobre a imagem */
+/* camada de brilho sutil */
 #container::before {
   content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    to bottom,
-    rgba(15, 23, 42, 0.7),
-    rgba(15, 23, 42, 0.9)
+    180deg,
+    rgba(0, 255, 100, 0.1),
+    rgba(0, 0, 0, 0.85)
   );
   z-index: 0;
 }
@@ -61,7 +56,44 @@ body {
   z-index: 1;
 }
 
-/* --- MENU --- */
+/* PERFIL */
+#profile img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid var(--primaria);
+  margin-bottom: 15px;
+  box-shadow: 0 0 15px rgba(0, 255, 100, 0.6);
+}
+
+#profile h1 {
+  font-size: 1.5rem;
+  color: var(--primaria);
+  margin-bottom: 5px;
+}
+
+#profile p {
+  color: #cfd8dc;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+/* HABILIDADES */
+.abilidades {
+  margin: 25px 0;
+}
+
+.abilidades img {
+  margin: 0 6px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.abilidades img:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 8px var(--primaria));
+}
+
+/* MENU */
 nav .menu {
   list-style: none;
   display: flex;
@@ -79,64 +111,28 @@ nav .menu a {
   font-weight: 600;
   color: #fff;
   background: var(--vidro);
-  padding: 12px;
+  padding: 14px;
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 255, 100, 0.2);
   transition: all 0.3s ease;
-  box-shadow: 0 4px 0 rgba(255, 255, 255, 0.2);
-  position: relative;
+  box-shadow: 0 4px 0 rgba(0, 255, 100, 0.1);
 }
 
 nav .menu a:hover {
-  background: var(--secundaria);
-  color: #fff;
+  background: var(--primaria);
+  color: #000;
   transform: translateY(-3px);
-  box-shadow: 0 0 12px rgba(139, 92, 246, 0.4);
+  box-shadow: 0 0 12px var(--primaria);
 }
 
 nav .menu a:active,
 .menu a.pressed {
   transform: translateY(3px);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
   background: var(--secundaria);
+  box-shadow: 0 0 6px var(--secundaria);
 }
 
-/* --- PERFIL --- */
-#profile img {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  border: 3px solid var(--secundaria);
-  margin-bottom: 15px;
-}
-
-#profile h1 {
-  font-size: 1.4rem;
-  color: #fff;
-  margin-bottom: 4px;
-}
-
-#profile p {
-  color: var(--texto);
-  font-weight: 400;
-  font-size: 0.95rem;
-}
-
-/* --- HABILIDADES --- */
-.abilidades {
-  margin: 25px 0;
-}
-
-.abilidades img {
-  margin: 0 5px;
-  transition: transform 0.3s ease;
-}
-
-.abilidades img:hover {
-  transform: scale(1.2);
-}
-
-/* --- LINKS SOCIAIS --- */
+/* LINKS SOCIAIS */
 #social-links {
   display: flex;
   justify-content: center;
@@ -145,25 +141,26 @@ nav .menu a:active,
 }
 
 #social-links a {
-  color: #fff;
-  font-size: 1.4rem;
+  color: var(--primaria);
+  font-size: 1.5rem;
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
 #social-links a:hover {
-  color: var(--secundaria);
+  color: #fff;
   transform: scale(1.2);
+  text-shadow: 0 0 10px var(--primaria);
 }
 
-/* --- RODAPÉ --- */
+/* RODAPÉ */
 footer {
   font-size: 0.8rem;
   opacity: 0.8;
-  color: #cbd5e1;
+  color: #a8b3bd;
   line-height: 1.4;
 }
 
-/* --- MODAL --- */
+/* MODAL */
 .modal {
   display: none;
   position: fixed;
@@ -172,29 +169,27 @@ footer {
   top: 0;
   width: 100%;
   height: 100%;
-  background: rgba(15, 23, 42, 0.8);
-  backdrop-filter: blur(6px);
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
   justify-content: center;
   align-items: center;
 }
 
 .modal-content {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(0, 255, 100, 0.2);
   padding: 25px 30px;
   border-radius: 14px;
-  text-align: left;
   color: #fff;
   width: 90%;
   max-width: 400px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-  animation: fadeIn 0.4s ease;
+  box-shadow: 0 0 20px rgba(0, 255, 100, 0.3);
 }
 
 .modal-content h2 {
   text-align: center;
   margin-bottom: 15px;
-  color: var(--secundaria);
+  color: var(--primaria);
 }
 
 .modal-content label {
@@ -204,25 +199,26 @@ footer {
 }
 
 .modal-content input[type="checkbox"] {
-  accent-color: var(--secundaria);
+  accent-color: var(--primaria);
   margin-right: 8px;
 }
 
 .modal-content button {
   margin-top: 15px;
   width: 100%;
-  background: var(--secundaria);
-  color: #fff;
+  background: var(--primaria);
+  color: #000;
   border: none;
   padding: 12px;
   border-radius: 10px;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .modal-content button:hover {
-  background: #8a5cf68e;
+  background: var(--secundaria);
+  box-shadow: 0 0 10px var(--primaria);
 }
 
 .fechar {
@@ -232,7 +228,7 @@ footer {
   color: #fff;
 }
 
-/* --- ANIMAÇÕES --- */
+/* ANIMAÇÃO */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -244,10 +240,12 @@ footer {
   }
 }
 
-/* --- RESPONSIVO --- */
+/* RESPONSIVO */
 @media (max-width: 420px) {
-  #container {
-    width: 95%;
-    padding: 25px 15px;
+  body, #container {
+    width: 100%;
+    height: 100vh;
+    border-radius: 0;
+    padding: 20px 15px;
   }
 }
