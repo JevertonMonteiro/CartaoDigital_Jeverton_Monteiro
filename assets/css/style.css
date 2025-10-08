@@ -1,0 +1,246 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+:root {
+  --primaria: #6366f1;
+  --secundaria: #8b5cf6;
+  --escuro: #0f172a;
+  --vidro: rgba(255, 255, 255, 0.08);
+  --texto: #e2e8f0;
+}
+
+
+body {
+  background: linear-gradient(135deg, var(--escuro), #1e1b4b);
+  color: var(--texto);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+
+#container {
+  width: 360px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 30px 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 0.8s ease;
+}
+
+nav .menu a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #fff;
+  background: var(--vidro);
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 0 rgba(255, 255, 255, 0.2); 
+  position: relative;
+}
+
+
+nav .menu a:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+
+.menu a.pressed {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+  background: var(--secundaria);
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+#profile img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 3px solid var(--secundaria);
+  margin-bottom: 15px;
+}
+
+#profile h1 {
+  font-size: 1.4rem;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+#profile p {
+  color: var(--texto);
+  font-weight: 400;
+  font-size: 0.95rem;
+}
+
+
+.abilidades {
+  margin: 25px 0;
+}
+
+.abilidades img {
+  margin: 0 5px;
+  transition: transform 0.3s ease;
+}
+
+.abilidades img:hover {
+  transform: scale(1.2);
+}
+
+
+nav .menu {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+nav .menu a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #fff;
+  background: var(--vidro);
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+nav .menu a:hover {
+  background: var(--secundaria);
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 0 12px rgba(139, 92, 246, 0.4);
+}
+
+
+#social-links {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 15px;
+}
+
+#social-links a {
+  color: #fff;
+  font-size: 1.4rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+#social-links a:hover {
+  color: var(--secundaria);
+  transform: scale(1.2);
+}
+
+
+footer {
+  font-size: 0.8rem;
+  opacity: 0.8;
+  color: #cbd5e1;
+  line-height: 1.4;
+}
+
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(6px);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 25px 30px;
+  border-radius: 14px;
+  text-align: left;
+  color: #fff;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  animation: fadeIn 0.4s ease;
+}
+
+.modal-content h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: var(--secundaria);
+}
+
+.modal-content label {
+  display: block;
+  margin: 8px 0;
+  font-size: 0.95rem;
+}
+
+.modal-content input[type="checkbox"] {
+  accent-color: var(--secundaria);
+  margin-right: 8px;
+}
+
+.modal-content button {
+  margin-top: 15px;
+  width: 100%;
+  background: var(--secundaria);
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.modal-content button:hover {
+  background: #8a5cf68e;
+}
+
+.fechar {
+  float: right;
+  font-size: 22px;
+  cursor: pointer;
+  color: #fff;
+}
+
+
+@media (max-width: 420px) {
+  #container {
+    width: 95%;
+    padding: 25px 15px;
+  }
+}

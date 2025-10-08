@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartão Digital Profissional | Jeverton Monteiro</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="shortcut icon" href="assets/img/programador.png" type="image/x-icon">
+<body>
+    <div id="container">
+        <div id="profile">
+            <img src="assets/img/Jeverton.jpg" alt="Foto de Jeverton Monteiro">
+            <h1>Jeverton Monteiro</h1>
+            <p>Desenvolvedor Front-End</p>
+        </div>
+
+        <div class="abilidades">
+            <img src="https://skillicons.dev/icons?i=html" height="40" alt="HTML5" />
+            <img src="https://skillicons.dev/icons?i=css" height="40" alt="CSS3" />
+            <img src="https://skillicons.dev/icons?i=js" height="40" alt="JavaScript" />
+            <img src="https://skillicons.dev/icons?i=react" height="40" alt="React" />
+            <img src="https://skillicons.dev/icons?i=firebase" height="40" alt="Firebase" />
+        </div>
+
+        <nav>
+            <ul class="menu">
+                <li>
+                    <a href="#" id="abrirModal">
+                        <i class="fa-brands fa-whatsapp"></i> Solicitar Orçamento
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/JevertonMonteiro" target="_blank">
+                        <i class="fa-brands fa-github"></i> GitHub
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/easy_web_code/" target="_blank">
+                        <i class="fa-brands fa-instagram"></i> Instagram
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/jeverton-silva-13004a28b/" target="_blank">
+                        <i class="fa-brands fa-linkedin"></i> LinkedIn
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div id="social-links">
+            <a href="https://www.instagram.com/easy_web_code/" target="_blank"><i
+                    class="fa-brands fa-instagram"></i></a>
+            <a href="mailto:easywebcode36@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+            <a href="https://github.com/JevertonMonteiro" target="_blank"><i class="fa-brands fa-github"></i></a>
+        </div>
+
+        <footer>
+            © 2025 Jeverton Monteiro | Front-End Developer<br>
+            HTML • CSS • JavaScript • React • Firebase
+        </footer>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="fechar">&times;</span>
+            <h2>Escolha os serviços desejados</h2>
+            <form id="formOrcamento">
+                <label><input type="checkbox" name="servico" value="Criação de Site Profissional"> Criação de Site
+                    Profissional</label>
+                <label><input type="checkbox" name="servico" value="Landing Page"> Landing Page</label>
+                <label><input type="checkbox" name="servico" value="Cartão Digital Interativo"> Cartão Digital
+                    Interativo</label>
+                <label><input type="checkbox" name="servico" value="Link na bio (Instagram)"> Link na bio
+                    (Instagram)</label>
+                <label><input type="checkbox" name="servico" value="Gestão de Tráfego Pago"> Gestão de Tráfego
+                    Pago</label>
+
+                <button type="button" id="enviarWhatsApp">Próximo</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
